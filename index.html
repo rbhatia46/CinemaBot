@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>MovieInfo</title>
+    <link rel="stylesheet" href="https://bootswatch.com/cosmo/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700%7CRoboto%7CJosefin+Sans:100,300,400,500" rel="stylesheet" type="text/css"/>
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"/>
+	 <link rel="icon" href="img/templatelogo.gif"/>
+	<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+  </head>
+  <body>
+    
+
+    <div class="container-fluid">
+	
+	  <a href="index.html"><img class="img-responsive text-center animated fadeInDown" src="img/logo.jpg" style="margin:auto; padding:90px;"/></a> 
+    	<div class="jumbotron">
+	    	<h3 class="text-center">CinemaBot : The Movie Search Engine<sub>©</sub></h3>
+	    	<form id="searchForm">
+	    		<input type="text" class="form-control" id="searchText" placeholder="Search a Movie" required>
+	    	</form>
+			
+	    </div>
+    </div>
+
+    <div class="container">
+      <div id="movies" class="row"></div>
+    </div>
+
+	<script>
+        window.sr = ScrollReveal();
+        sr.reveal('.img-responsive', {
+          duration: 2500,
+          origin:'bottom'
+        });
+		sr.reveal('.jumbotron', {
+          duration: 3000,
+          origin:'left'
+        });
+	
+        
+    </script>
+	
+    <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="js/main.js"></script>
+  </body>
+</html>
