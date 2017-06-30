@@ -47,7 +47,7 @@ function getMovie(){
       let output = ` 
 	  <div class="row">
 	   <div class="col-md-4">
-	   <img src="https://image.tmdb.org/t/p/w300/${movie.poster_path}" class="thumbnail"  alt="No Preview Available" title="No Preview Available"/>
+	   <img src="https://image.tmdb.org/t/p/w300/${movie.poster_path}" class="thumbnail"  alt="No Preview Available" onerror="this.onerror=null;this.src='https://s3.amazonaws.com/ae-plugins/shared/images/default-thumb-300x300.png';" />
 	   </div>
 	   <div class="col-md-8">
 	   <h2>${movie.original_title}</h2>
