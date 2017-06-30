@@ -16,7 +16,7 @@ function getMovies(searchText){
 		  output += ` 
 		    <div class="col-md-3">
                  <div class="well text-center">
-				 <img src="https://image.tmdb.org/t/p/w300/${movie.poster_path}"/ class="img-responsive" title="No preview available">			
+				 <img src="https://image.tmdb.org/t/p/w300/${movie.poster_path}"/ class="img-responsive" onerror="this.onerror=null;this.src='https://s3.amazonaws.com/ae-plugins/shared/images/default-thumb-300x300.png';" />			
 			  <h5> 	${movie.original_title}</h5>
 			  <a onclick="movieSelected('${movie.id}')" class="btn btn-primary" href="#">Movie Details</a>
 			  </div>
