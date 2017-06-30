@@ -52,7 +52,7 @@ function getMovie(){
 	   <div class="col-md-8">
 	   <h2>${movie.original_title}</h2>
 	   <ul class="list-group">
-	    <li class="list-group-item"><strong>Genre :</strong>${movie.genres.name}</li>
+	    <li class="list-group-item"><strong>Genre :</strong>${(movie.genres[0].name!=null)?(movies.genres[0].name):(movies.genres.name)}</li>
 	    <li class="list-group-item"><strong>Status ,Release Date :</strong> ${movie.status} , ${movie.release_date}</li>
 		<li class="list-group-item"><strong>Runtime :</strong> ${movie.runtime} min</li>
 		<li class="list-group-item"><strong>Average Vote(out of 10):</strong> ${movie.vote_average}</li>
