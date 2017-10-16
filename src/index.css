@@ -1,5 +1,61 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: "Segoe UI","Source Sans Pro",Calibri,Candara,Arial,sans-serif;
 }
+.logo {
+   height: 100px;
+   width: 100px;
+}
+
+.input{
+  height: 43px;
+  width: 1130px;
+  border-radius: 3px;
+  margin: 10px 0;
+  padding: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.43);
+  font-size: 16px;
+  width: 80%;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.text-area{
+  display:flex;
+  flex-direction: column;
+  width: 1200px;
+  height: 198.5px;
+  background-color:#E6E6E6;
+  align-items: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.parent {
+  display: flex;
+  flex-direction: column;
+}
+
+#movies img, #movie img{
+  width:100%;
+}
+
+@media(min-width:960px){
+  #movies .col-md-3 .well{
+    height: 390px;
+  }
+
+  #movies .col-md-3 img{
+    height:240px;
+	  width: 240px;
+	  text-align:center;
+	  margin:auto;
+  }
+}
+
+
