@@ -1,22 +1,27 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Segoe UI","Source Sans Pro",Calibri,Candara,Arial,sans-serif;
+  font-family: sans-serif;
+}
+div {
+  display: block;
 }
 .logo {
-   height: 100px;
-   width: 100px;
+   height: auto;
+   width: auto;
+   padding: 90px;
+   margin-left: auto;
+   margin-right: auto;
 }
 
 .input{
-  height: 43px;
-  width: 1130px;
+  height: 30px;
   border-radius: 3px;
   margin: 10px 0;
   padding: 5px;
   border: 1px solid rgba(0, 0, 0, 0.43);
-  font-size: 16px;
-  width: 80%;
+  font-size: 12px;
+  width: 100%;
 }
 
 .text-center{
@@ -26,7 +31,7 @@ body {
 .text-area{
   display:flex;
   flex-direction: column;
-  width: 1200px;
+  width: 100%;
   height: 198.5px;
   background-color:#E6E6E6;
   align-items: center;
@@ -39,6 +44,11 @@ body {
 .parent {
   display: flex;
   flex-direction: column;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  width:100%;
 }
 
 #movies img, #movie img{
@@ -58,4 +68,21 @@ body {
   }
 }
 
+button {
+  color: #e6e6e6;
+  background: #0a0a0a;
+  border: none;
+  font-size: 16px;
+  border-radius: 3px;
+  width: 50px;
+  text-align: center;
+  display: block;
+  padding: 7px 0;
+  margin: 10px auto;
+}
+
+form{
+  display: flex;
+  width:1130px;
+}
 
