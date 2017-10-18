@@ -12,7 +12,7 @@ module.exports = {
        });
        },
     getMovie:(id) =>  {  
-        return axios.get(`https://api.themoviedb.org/3/movie/"+${id}+"?api_key=${API_KEY}`)
+        return axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`)
         .then(function (response) {
           return response.data;
         }).catch((err)=>{

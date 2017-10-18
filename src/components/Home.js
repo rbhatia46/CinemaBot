@@ -1,31 +1,27 @@
 var React = require('react');
-// var Link = require('react-router-dom').Link;
+var Link = require('react-router-dom').Link;
 var api = require('../utils/api');
 const link = './logo.jpg';
-
-function Movies(props) {
-    function movieSelected(id) {
-        api.getMovie();
-    }
+ 
+function Movies (props) {
+    console.log(props);
     return(
         <div className="row movies">
                 {props.movies.map(function(movie,index){
                     return(
                             <div className='col-md-3' key={movie.id} > 
                                 <div className='well text-center'>
-                                    <img className='img-responsive' src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`} alt='rander' />
+                                    <img className='img-responsive' src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`} alt='No Preview Available' />
                                     <h5 style={{textAlign: 'center'}}>{movie.original_title}</h5>
-                                    <button 
+                                    <Link to={`/movie/${movie.id}`}> <button 
                                     className='btn btn-primary'
-                                    onClick={movieSelected(movie.id)}
-                                    >
-                                        Movie Details
-                                    </button>
+                                    onClick={this.movieSelected}>
+                                        Movie Details 
+                                    </button></Link>
                                 </div>
-                            </div>
-                            )
+                            </div>)
                 })
-}
+            }
         </div>
     )
 };

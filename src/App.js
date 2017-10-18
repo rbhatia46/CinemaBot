@@ -13,7 +13,7 @@ class App extends Component {
         <div className='container'>
           <Switch>
             <Route exact path='/' component={Home} />
-            <Route exact path='/movie' component={Movie} />
+            <Route exact path='/movie/:id' component={Movie} />
             <Route render={function () {
               return <p> NOT FOUND </p>
             }} />
