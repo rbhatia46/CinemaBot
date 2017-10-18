@@ -4,7 +4,7 @@ var Router = ReactRouter.BrowserRouter;
 var Route = ReactRouter.Route;
 var Switch = ReactRouter.Switch;
 var Home = require('./components/Home');
-var Movies = require ('./components/Movies');
+var Movie = require ('./components/Movie');
 
 class App extends Component {
   render() {
@@ -13,7 +13,7 @@ class App extends Component {
         <div className='container'>
           <Switch>
             <Route exact path='/' component={Home} />
-            <Route exact path='/movies' component={Movies} />
+            <Route exact path='/movie' component={Movie} />
             <Route render={function () {
               return <p> NOT FOUND </p>
             }} />

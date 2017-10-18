@@ -1,27 +1,33 @@
 var React = require('react');
-var Link = require('react-router-dom').Link;
+// var Link = require('react-router-dom').Link;
 var api = require('../utils/api');
 const link = './logo.jpg';
 
-function Movie(props) {
+function Movies(props) {
+    function movieSelected(id) {
+        api.getMovie();
+    }
     return(
-        <ul className='popular-list'>
+        <div className="row movies">
                 {props.movies.map(function(movie,index){
                     return(
-                        <li key={movie.id} > 
-                            <div>
-                        <img src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`} alt='rander' />
-                        <h3 style={{textAlign: 'center'}}>{movie.title}</h3>
-                        <Link className='button' to='/movies'>
-                            Movie Details
-                        </Link>
-                    </div>
-                        </li>
-                        
-                    )
-            })
-        }
-        </ul>)
+                            <div className='col-md-3' key={movie.id} > 
+                                <div className='well text-center'>
+                                    <img className='img-responsive' src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`} alt='rander' />
+                                    <h5 style={{textAlign: 'center'}}>{movie.original_title}</h5>
+                                    <button 
+                                    className='btn btn-primary'
+                                    onClick={movieSelected(movie.id)}
+                                    >
+                                        Movie Details
+                                    </button>
+                                </div>
+                            </div>
+                            )
+                })
+}
+        </div>
+    )
 };
 
 class Home extends React.Component {
@@ -57,20 +63,22 @@ class Home extends React.Component {
     render() {
         return (
           <div className='parent' >
-                <img src={link} className='logo' alt='beanne' />
-            <div className='text-area'>
+                <img src={link} className='logo text-center' alt='beanne' />
+            <div className='jumbotron'>
                 <h3 className='text-center'>CinemaBot : The Movie Search Engine<sub>©</sub></h3>
                 <form className='form' onSubmit={this.handleSubmit}>
                     <input 
                     type="text" 
-                    className="input" 
+                    className="form-control" 
                     placeholder="Search a Movie"
                     value={this.state.title} 
                     onChange={this.handleChange}
                     required />
                </form>
             </div>
-            <Movie movies={this.state.bean}/>
+            <div className="container">
+                <Movies movies={this.state.bean}/>
+            </div>
           </div>
       )
     }
