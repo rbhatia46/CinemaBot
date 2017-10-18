@@ -59,7 +59,7 @@ class Home extends React.Component {
     render() {
         return (
           <div className='parent' >
-                <img src={link} className='logo text-center' alt='beanne' />
+                <img src={link} className='logo text-center animated fadeInDown' alt='beanne' />
             <div className='jumbotron'>
                 <h3 className='text-center'>CinemaBot : The Movie Search Engine<sub>©</sub></h3>
                 <form className='form' onSubmit={this.handleSubmit}>
