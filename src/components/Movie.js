@@ -1,5 +1,7 @@
 var React = require('react');
 var api = require('../utils/api');
+var Loading = require('./Loading');
+
 
 function MovieItem (props) {
     console.log(props.movie);
@@ -37,13 +39,17 @@ class Movie extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          movie: {
-            genres:[{name: ''}]
-          }
+        //   movie: {
+        //     genres:[{name: ''}]
+        //   }
         };
     }
     componentWillMount() {
-        api.getMovie(this.props.match.params.id)
+        this.showMovieDetails(this.props.match.params.id);
+    }
+
+    showMovieDetails(id) {
+        api.getMovie(id)
         .then((res)=>{
             console.log(res);
             return this.setState({movie: res})
@@ -52,15 +58,14 @@ class Movie extends React.Component {
         })
     }
     render() {
-        if(this.state.movie === undefined ){
             return(
-                <div><h1>CHECK INTERNET</h1></div>
+                <div>
+                {(this.state.movie === undefined ) 
+                ?<Loading /> 
+                :<MovieItem movie={this.state.movie} />
+                }       
+                </div> 
             )
-        }else {
-            return ( 
-                    <MovieItem movie={this.state.movie} />
-            )
-    }
     }
 }
 
