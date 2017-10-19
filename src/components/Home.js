@@ -75,7 +75,7 @@ class Home extends React.Component {
             </div>
             <div className="container">
             {(this.state.bean === undefined ) 
-                ? <Loading /> 
+                ? null 
                 :<Movies movies={this.state.bean} />
                 }    
             </div>
