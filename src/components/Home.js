@@ -2,6 +2,8 @@ var React = require('react');
 var Link = require('react-router-dom').Link;
 var api = require('../utils/api');
 const link = './logo.jpg';
+var Loading = require('./Loading');
+
  
 function Movies (props) {
     console.log(props);
@@ -31,7 +33,6 @@ class Home extends React.Component {
         super(props);
         this.state = {
           title: '',
-          bean: [],
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -73,7 +74,10 @@ class Home extends React.Component {
                </form>
             </div>
             <div className="container">
-                <Movies movies={this.state.bean}/>
+            {(this.state.bean === undefined ) 
+                ? <Loading /> 
+                :<Movies movies={this.state.bean} />
+                }    
             </div>
           </div>
       )
