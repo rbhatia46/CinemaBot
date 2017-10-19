@@ -1,6 +1,7 @@
 var React = require('react');
 var api = require('../utils/api');
 var Loading = require('./Loading');
+var Link = require('react-router-dom').Link;
 
 
 function MovieItem (props) {
@@ -28,7 +29,7 @@ function MovieItem (props) {
                     {props.movie.overview}
                     <hr />
                     <a href={`http://www.imdb.com/title/${props.movie.imdb_id}`}  className="btn btn-primary">View on IMDb</a>
-                    <a href="index.html" className="btn btn-default">Back to CinemaBot</a>
+                    <Link to={"/"}><button className="btn btn-default">Back to CinemaBot</button></Link>
             </div>
         </div>
      </div>
