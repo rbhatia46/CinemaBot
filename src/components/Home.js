@@ -2,8 +2,6 @@ var React = require('react');
 var Link = require('react-router-dom').Link;
 var api = require('../utils/api');
 const link = './logo.jpg';
-var Loading = require('./Loading');
-
  
 function Movies (props) {
     console.log(props);
