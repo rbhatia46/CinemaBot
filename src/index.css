@@ -1,0 +1,44 @@
+body {
+  font-family: "Segoe UI", "Source Sans Pro", Calibri, Candara, Arial, sans-serif;
+}
+
+.logo {
+   height: auto;
+   width: auto;
+   padding: 90px;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+
+
+.text-center{
+  text-align: center;
+}
+
+.parent {
+  display: flex;
+  flex-direction: column;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  width:100%;
+}
+
+.movies img, #movie img{
+  width:100%;
+}
+
+@media(min-width:960px){
+  .movies .col-md-3 .well{
+    height: 390px;
+  }
+
+  .movies .col-md-3 img{
+    height:240px;
+	  width: 240px;
+	  text-align:center;
+	  margin:auto;
+  }
+}
